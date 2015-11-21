@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd ">
+
+	<display-name>proyectoVCA</display-name>
+
+	<!-- Spring basic configurations -->
+	<context-param>
+   			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/spring.xml</param-value>	
+    </context-param>
+    
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+	<!--Dispacher servlet: Controla la ruta donde viajaran nuestras solicitudes -->
+	<!-- DispatcherServlet: Atiende o resuelve nuestras peticiones en el cliente -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/spring.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!--Dispacher mapping: Mapea las URL que queremos que apunte a nuestro servlet(desarrollovca) -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<!-- Ojo: los servlet-name deben tener el mismo nombre -->
+
+<!-- 	<welcome-file-list> -->
+<!-- 		<welcome-file>login.htm</welcome-file> -->
+<!-- 	</welcome-file-list> -->
+
+</web-app>

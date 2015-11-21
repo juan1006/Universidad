@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="login" template="/WEB-INF/jsp/login.jsp">
+		<put-attribute name="titulo" value="Login"/>
+	</definition>
+	
+	<definition name="main" template="/WEB-INF/jsp/template/main.jsp">
+		<put-attribute name="titulo" value="Proyecto VCA"/>
+		<put-attribute name="cabecera" value="/WEB-INF/jsp/template/cabecera.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/jsp/template/menu.jsp"/>
+	</definition>
+	
+	<definition name="registro" template="/WEB-INF/jsp/registro.jsp">
+		<put-attribute name="titulo" value="Registro"/>
+	</definition>
+	
+	<definition name="cliente" extends="main">
+		<put-attribute name="contenido" value="/WEB-INF/jsp/cliente.jsp"/>
+		<put-attribute name="titulo" value="Listar Clientes"/>
+	</definition>
+
+	<definition name="cliente-registro-n" extends="main">
+		<put-attribute name="contenido" value="/WEB-INF/jsp/cliente-registro-n.jsp"/>
+		<put-attribute name="titulo" value="Registra cliente natural"/>
+	</definition>
+	
+	<definition name="cliente-registro-j" extends="main">
+		<put-attribute name="contenido" value="/WEB-INF/jsp/cliente-registro-j.jsp"/>
+		<put-attribute name="titulo" value="Registra cliente juridico"/>
+	</definition>
+	
+	<definition name="producto" extends="main">
+		<put-attribute name="contenido" value="/WEB-INF/jsp/producto.jsp"/>
+		<put-attribute name="titulo" value="Listar Productos"/>
+	</definition>
+	
+	<definition name="producto-registro" extends="main">
+		<put-attribute name="contenido" value="/WEB-INF/jsp/producto-registro.jsp"/>
+		<put-attribute name="titulo" value="Registra producto"/>
+	</definition>
+
+</tiles-definitions>
