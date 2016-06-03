@@ -10,7 +10,6 @@ Product.prototype.init = function(){
 Product.prototype.handler = function(){
 	var obj = this;
 	
-	
 	obj.formProduct.on('submit',function(){
 		$.ajax({
 			url: obj.formProduct.attr('action'),
